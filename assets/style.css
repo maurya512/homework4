@@ -38,3 +38,17 @@ button:hover{
 .container h2 {
     color: rgb(218, 21, 21);
 }
+
+/* #mainpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+#quiz {
+    display: none;
+}
+
+#result {
+    display: none;
+}
