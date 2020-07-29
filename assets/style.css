@@ -53,15 +53,6 @@ button:hover{
     display: none;
 }
 
-#userInitialsInput {
-    margin: .5rem;
-    height: 1.75rem;
-    border-radius: 8px;
-    border: 3px double #c20e0e;
-    background-color: #d6df60;
-    color: maroon;
-}
-
 #timer {
     font-family: 'Courier New', Courier, monospace;
     background-color: #d6df60;
@@ -71,11 +62,27 @@ button:hover{
     text-align: center;
 }
 
+#userInitialsInput {
+    margin: .5rem;
+    height: 1.75rem;
+    border-radius: 8px;
+    border: 3px double #c20e0e;
+    background-color: #d6df60;
+    color: maroon;
+}
+
 #gameover {
     display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+#finalScore {
+    padding-bottom: .5rem;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
 }
 
 #highScorePage {
@@ -105,6 +112,35 @@ button:hover{
     color: rgb(218, 21, 21);
     font-family: 'Courier New', Courier, monospace;
 }
+
+
+#highScore-initials {
+    display: inline-block;
+    padding-left: 9.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+}
+
+#highScore-score {
+    float: right;
+    padding-right: 8.75rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+}
+
+
+#endGame {
+    display: none;
+}
+
+p {
+    color: #c20e0e;
+    text-align: center;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
 :root {
-    background-color: rgb(159, 231, 231);
+    background-color: rgb(223, 190, 159);
 }
