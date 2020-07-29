@@ -17,20 +17,44 @@
             <button id="start-btn">Start Quiz</button>
             <button id="mainPageHighScore">High Scores</button>
         </div>
-    </div>
 
-    <div id="quizPage">
-        <div id="timer">Time Remaining: </div>
-        <div id="questions">
-            <p>Questions Placeholder</p>
-            </p>
+        <div id="quizPage">
+            <div id="timer">Time Remaining: </div>
+            <div id="questions">
+                <p>Questions Placeholder</p>
+            </div>
+            <button id="btn-a">A</button>
+            <button id="btn-b">B</button>
+            <button id="btn-c">C</button>
+            <button id="btn-d">D</button>
+            <div id="result"></div>
         </div>
-        <button id="btn-a">A</button>
-        <button id="btn-b">B</button>
-        <button id="btn-c">C</button>
-        <button id="btn-d">D</button>
-        <div id="result"></div>
-    </div>
-</body>
 
+        <div id="gameover">
+
+            <div id="finalScore"></div>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="userInitialsInput" aria-describedby="user"
+                        placeholder="Enter your initials">
+                </div>
+            </form>
+        </div>
+        <div id="highScore">
+            <div id="highScorePage">
+                <div id="highScoreHeader">
+                    <h3>User Initials</h3>
+                    <h3>Score</h3>
+                </div>
+                <div id="highscore-initials"></div>
+                <div id="highscore-score"></div>
+            </div>
+            <div id="endGame">
+                <button id="playAgain">Play Again</button>
+                <button id="clearHighScore">Clear High Scores</button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script.js"></script>
+</body>
 </html>
