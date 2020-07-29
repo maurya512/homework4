@@ -48,3 +48,33 @@ var quizQuestions = [{
 },
 ];
 
+var quizQuestions = [{
+    q: "What does HTML stand for?", A: "Hyper Text Markup Language", B: "Hyper Type Makeup Language", C: "HyperLinks Text Markup Language", D: "Happy Text Messaging Language", correctAnswer: "a"
+},
+{
+    q: "What does CSS stand for?", A: "Cascading Shaping Sheets", B: "Creating Style Sheets", C: "Cascading Style Sheets", D: "Creating Simple Style", correctAnswer: "c"
+},
+{
+    q: "Which of the following is a CSS Framework?", A: "Bootcamp", B: "StarGaze", C: "Bootstrap", D: "My SQL", correctAnswer: "c"
+},
+{
+    q: "What does SQL stand for?", A: "Structured Question Language", B: "Standard Query Langauge", C: "Strong Question Language", D:"Structured Query Language", correctAnswer: "d"
+},
+{
+    q: "What HTML attribute references an external JavaScript file?", A: "href", B: "src", C: "class", D: "index", correctAnswer: "b"
+},
+{
+    q: "When is localStorage data cleared?", A: "No Expiration Time", B: "On Page Reload", C: "On browser close", D: "On Console Close", correctAnswer: "a"
+},
+{
+    q: "What does DOM stand for?", A: "Document Object Model", B: "Display Object Management", C: "Digital Ordinance Model", D: "Desktop Objective Method", correctAnswer: "a"
+},
+{
+    q: "What does CDN stand for?", A: "Content Delivery Network", B: "Cascading Delivery Network", C: "Creative Driving Network", D: "Content Discovery Network", correctAnswer: "a"
+},
+];
+
+var score = 0;
+var timeLeft = 60;
+var correctAns;
+var timerInterval;
