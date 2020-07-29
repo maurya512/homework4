@@ -45,10 +45,66 @@ button:hover{
     align-items: center;
 } */
 
-#quiz {
+#quizPage {
     display: none;
 }
 
 #result {
     display: none;
+}
+
+#userInitialsInput {
+    margin: .5rem;
+    height: 1.75rem;
+    border-radius: 8px;
+    border: 3px double #c20e0e;
+    background-color: #d6df60;
+    color: maroon;
+}
+
+#timer {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #d6df60;
+    color: maroon;
+    font-size: large;
+    text-shadow: .5px .5px maroon;
+    text-align: center;
+}
+
+#gameover {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#highScorePage {
+    display: none;
+    border: 3px double #c20e0e;
+    width: 50%;
+    border-bottom-style: groove;
+    padding-bottom: .5rem;
+    background: #d6df60;
+}
+
+#highScore {
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#highScoreHeader {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: .5rem;
+    background-color: #d6df60;
+    color: rgb(218, 21, 21);
+    font-family: 'Courier New', Courier, monospace;
+}
+:root {
+    background-color: rgb(159, 231, 231);
 }
