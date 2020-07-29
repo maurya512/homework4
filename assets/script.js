@@ -48,8 +48,3 @@ var quizQuestions = [{
 },
 ];
 
-var score = 0;
-var timeLeft = 60;
-var correctAns;
-var timerInterval;
-
