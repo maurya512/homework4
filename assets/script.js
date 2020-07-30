@@ -253,3 +253,6 @@ function replayQuiz() {
     score = 0;
     currentQuestionIndex = 0;
 }
+
+// the button that will start the quiz
+startQuizDiv.addEventListener("click",startQuiz);
