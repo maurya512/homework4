@@ -47,6 +47,8 @@ var quizQuestions = [{
     q: "What does CDN stand for?", optionA: "Content Delivery Network", optionB: "Cascading Delivery Network", optionC: "Creative Driving Network", optionD: "Content Discovery Network", correctAnswer: "D"
 },
 ];
+
+// global variables 
 var score = 0;
 var timeLeft = 60;
 var correctAns;
@@ -98,7 +100,7 @@ function userScore() {
     quizEl.style.display = "none";
     gameOver.style.display = "flex";
     clearInterval(timerInterval);
-    highScoreInput.value = "";
+    var highScoreInput = "";
     finalScoreEl.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct ";
 }
 
@@ -106,16 +108,16 @@ function userScore() {
 submitScoreBtn.addEventListener("click", function highScore() {
 
     // if the user left the space blank or hit submit by mistake the program should remind them 
-    if (highScoreInput.value === "") {
+    if (highScoreInput === "") {
         alert("The initials cannot be left blank!");
         return false;
     }
 
     // if the user entered numericals as initials remind the user in some way
-    else if (parseInt(highScoreInput.value)) {
-        alert("The initials cannot be numbers!");
-        return false;
-    }
+    // else if (parseInt(highScoreInput.value)) {
+    //     alert("The initials cannot be numbers!");
+    //     return false;
+    // }
     else {
         var savedHighScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
         var currentUser = highScoreInput.value.trim();
