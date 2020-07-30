@@ -188,8 +188,8 @@ submitScoreBtn.addEventListener("click", function highScore() {
         var savedHighScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
         var currentUser = highScoreInput.value.trim();
         var currentUserScore = {
-            name: currentUser;
-            score: score:
+            name: currentUser,
+            score: score
         };
 
         gameOver.style.display="none";
@@ -203,4 +203,22 @@ submitScoreBtn.addEventListener("click", function highScore() {
 
     }
 });
+
+// a function to generate high scores 
+function generateHighScore() {
+    highScoreDisplayName.innerHTML="";
+    highScoreDisplayScore.innerHTML="";
+
+    var highScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
+    for (var i=0; i < highScores.length; i++){
+        var newName = document.createElement("li");
+        var newScore = document.createElement("li");
+        newName.textContent = highScores[i].name;
+        newScore.textContent = highScores[i].score;
+        highScoreDisplayName.appendChild(newName);
+        highScoreDisplayScore.appendChild(newScore);
+    }
+}
+
+// 
 
