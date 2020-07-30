@@ -144,3 +144,17 @@ p {
 :root {
     background-color: rgb(223, 190, 159);
 }
+
+li {
+    padding-bottom: 3px;
+    color: #c20e0e;
+    text-shadow: 1.5px 1px 3px black;
+    list-style-type: none;
+}
+
+#finalScore{
+    padding-bottom: 0.5rem;
+    font-size: x-large;
+    font-family: sans-serif;
+    font-weight: bold;
+}
