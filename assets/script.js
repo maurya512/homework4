@@ -159,3 +159,48 @@ function checkAnswer(answer) {
     }
     }
 
+    // a function to show the final score of the user at the end of the quiz 
+function userScore() {
+    quizEl.style.display="none";
+    gameOver.style.display="flex";
+    clearInterval(timerInterval);
+    highScoreInput.value= "";
+    finalScoreEl.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct ";
+}
+
+// a function that submits the score to a local storage 
+
+// added an event to submit button with highScore as the callback function
+submitScoreBtn.addEventListener("click", function highScore() {
+    
+    // if the user left the space blank or hit submit by mistake the program should remind them 
+    if(highScoreInput.value="") {
+        alert("The initials cannot be left blank!");
+        return false;
+    }
+
+    // if the user entered numericals as initials remind the user in some way
+    else if(parseInt(highScoreInput.value)) {
+        alert("The initials cannot be numbers!");
+        return false;
+    }
+    else{
+        var savedHighScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
+        var currentUser = highScoreInput.value.trim();
+        var currentUserScore = {
+            name: currentUser;
+            score: score:
+        };
+
+        gameOver.style.display="none";
+        highScoreEl.style.display="flex";
+        highScorePage.style.display="block";
+        endGameBtn.style.display = "flex";
+
+        savedHighScores.push(currentUserScore);
+        localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores));
+        // a function to create high score? or a variable?
+
+    }
+});
+
