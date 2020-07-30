@@ -10,8 +10,8 @@ var startBtn = document.querySelector("#start-btn");
 var startQuizDiv = document.querySelector("#mainpage");
 var highScoreEl = document.querySelector("#highScore");
 var highScorePageEl = document.querySelector("#highScorePage");
-var highScoreInput = document.querySelector("#userInitialInput");
-var highScoreDispaly = document.querySelector("#highScore-intials");
+var highScoreInput = document.querySelector("#intials");
+var highScoreDisplay = document.querySelector("#highScore-intials");
 var endGameBtn = document.querySelector("#endGame");
 var submitScoreBtn = document.querySelector("#submitScore");
 var displayHighScore = document.querySelector("#highScore-score");
@@ -100,7 +100,7 @@ function userScore() {
     quizEl.style.display = "none";
     gameOver.style.display = "flex";
     clearInterval(timerInterval);
-    var highScoreInput = "";
+    highScoreInput = "";
     finalScoreEl.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct ";
 }
 
@@ -120,7 +120,7 @@ submitScoreBtn.addEventListener("click", function highScore() {
     // }
     else {
         var savedHighScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
-        var currentUser = highScoreInput.value.trim();
+        var currentUser = highScoreInput;
         var currentUserScore = {
             name: currentUser,
             score: score
@@ -140,8 +140,8 @@ submitScoreBtn.addEventListener("click", function highScore() {
 
 // a function to generate high scores 
 function generateHighScore() {
-    highScoreDisplayName.innerHTML = "";
-    highScoreDisplayScore.innerHTML = "";
+    highScoreDisplay.innerHTML = "";
+    displayHighScore.innerHTML = "";
 
     var highScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
     for (var i = 0; i < highScores.length; i++) {
@@ -149,8 +149,8 @@ function generateHighScore() {
         var newScore = document.createElement("li");
         newName.textContent = highScores[i].name;
         newScore.textContent = highScores[i].score;
-        highScoreDisplayName.appendChild(newName);
-        highScoreDisplayScore.appendChild(newScore);
+        highScoreDisplay.appendChild(newName);
+        displayHighScore.appendChild(newScore);
     }
 }
 
@@ -173,10 +173,10 @@ function clearScore() {
     window.localStorage.clear();
 
     // clears the value stored at user high score display name by assigning it an empty string
-    highScoreDisplayName.textContent = "";
+    highScoreDisplay.textContent = "";
 
     // clears the value store at user high score display socre by assigning it an empty string 
-    highScoreDisplayScore.textContent = "";
+    displayHighScore.textContent = "";
 }
 
 // a function that let's the user to replay the quiz 
@@ -188,6 +188,7 @@ function replayQuiz() {
     timeLeft = 60;
     score = 0;
     currentQuestionIndex = 0;
+    generateQuiz();
 }
 
 // a function to check correct answers
