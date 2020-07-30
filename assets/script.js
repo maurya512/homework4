@@ -78,3 +78,23 @@ var score = 0;
 var timeLeft = 60;
 var correctAns;
 var timerInterval;
+var currentQuestionIndex = 0;
+var finalQuestionIndex = quizQuestions.length;
+
+// a function that iterates through the array of objects containing the questions and generates the quiz
+
+function generateQuiz() {
+    gameOver.style.display = "none";
+    // check if the current question is the last question! 
+    // if so then return the score and end the quiz
+    if(currentQuestionIndex === finalQuestionIndex) {
+        return score;
+    }
+    var currentQuestion = quizQuestions
+    [currentQuestionIndex];
+    questionsEl.innerHTML = "<p>" + currentQuestion.q + "<p>";
+    btnA.innerHTML = currentQuestion.A;
+    btnB.innerHTML = currentQuestion.B;
+    btnC.innerHTML = currentQuestion.C;
+    btnD.innerHTML = currentQuestion.D;
+};
