@@ -243,4 +243,13 @@ function clearScore() {
     highScoreDisplayScore.textContent="";
 }
 
-
+// a function that let's the user to replay the quiz 
+// reseting all the values to their original selves 
+function replayQuiz() {
+    highScoreEl.style.display="none";
+    gameOver.style.display="none";
+    startQuizDiv.style.display="flex";
+    timeLeft = 60;
+    score = 0;
+    currentQuestionIndex = 0;
+}
