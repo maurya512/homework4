@@ -155,6 +155,7 @@ li {
 #finalScore{
     padding-bottom: 0.5rem;
     font-size: x-large;
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    color: #c20e0e;
 }
