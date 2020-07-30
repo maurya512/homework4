@@ -199,7 +199,7 @@ submitScoreBtn.addEventListener("click", function highScore() {
 
         savedHighScores.push(currentUserScore);
         localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores));
-        // a function to create high score? or a variable?
+        generateHighScore();
 
     }
 });
@@ -220,5 +220,16 @@ function generateHighScore() {
     }
 }
 
-// 
+// a function to show the high score of the user 
+function showHighScore() {
+    startQuizDiv.style.display="none";
+    gameOver.style.display="none";
+    highScoreEl.style.display="flex";
+    highScorePage.style.display="block";
+    endGameBtn.style.display="flex";
+
+    generateHighScore();
+}
+
+
 
