@@ -231,5 +231,16 @@ function showHighScore() {
     generateHighScore();
 }
 
+// a function that clears the high score of the user from local storage once hit clear the 
+function clearScore() {
+    // clears the local storage 
+    window.localStorage.clear();
+
+    // clears the value stored at user high score display name by assigning it an empty string
+    highScoreDisplayName.textContent="";
+
+    // clears the value store at user high score display socre by assigning it an empty string 
+    highScoreDisplayScore.textContent="";
+}
 
 
