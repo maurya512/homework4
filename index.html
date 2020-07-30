@@ -15,7 +15,7 @@
             <h1>Coding Quiz</h1>
             <h2>In this quiz you will be tested on the basics of Web-Dev Concepts</h2>
             <button id="start-btn">Start Quiz</button>
-            <button id="mainPageHighScore">High Scores</button>
+            <button id="mainPageHighScore" onclick="showHighScore()">High Scores</button>
         </div>
 
         <div id="quizPage">
@@ -23,22 +23,19 @@
             <div id="questions">
                 <p>Questions Placeholder</p>
             </div>
-            <button id="btn-a">A</button>
-            <button id="btn-b">B</button>
-            <button id="btn-c">C</button>
-            <button id="btn-d">D</button>
+            <button id="btn-a" onclick="checkAnswer('A')">A</button>
+            <button id="btn-b" onclick="checkAnswer('B')">B</button>
+            <button id="btn-c" onclick="checkAnswer('C')">C</button>
+            <button id="btn-d" onclick="checkAnswer('D')">D</button>
             <div id="result"></div>
         </div>
 
         <div id="gameover">
 
             <div id="finalScore"></div>
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="userInitialsInput" aria-describedby="user"
-                        placeholder="Enter your initials">
-                </div>
-            </form>
+            <input type="text" size="40" placeholder="Enter you initials" name="intials" id="initials" />
+            <button id="submitScore">Submit Score</button>
+
         </div>
         <div id="highScore">
             <div id="highScorePage">
@@ -50,11 +47,12 @@
                 <div id="highScore-score"></div>
             </div>
             <div id="endGame">
-                <button id="playAgain">Play Again</button>
-                <button id="clearHighScore">Clear High Scores</button>
+                <button id="playAgain" onclick="replayQuiz()">Play Again</button>
+                <button id="clearHighScore" onclick="clearScore()">Clear High Scores</button>
             </div>
         </div>
     </div>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
