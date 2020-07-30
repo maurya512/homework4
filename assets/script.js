@@ -7,7 +7,7 @@ var gameOver = document.querySelector("gameover");
 var questionsEl = document.querySelector("questions");
 var quizTimerEl = document.querySelector("timer");
 var startBtn = document.querySelector("start-btn");
-var startQuiz = document.querySelector("mainpage");
+var startQuizDiv = document.querySelector("mainpage");
 var highScoreEl = document.querySelector("highScore");
 var highScorePage = document.querySelector("highScorePage");
 var highScoreInput = document.querySelector("userInitialInput");
@@ -88,7 +88,7 @@ function generateQuiz() {
     // check if the current question is the last question! 
     // if so then return the score and end the quiz
     if(currentQuestionIndex === finalQuestionIndex) {
-        return score;
+        return userScore();
     }
     var currentQuestion = quizQuestions
     [currentQuestionIndex];
@@ -98,3 +98,64 @@ function generateQuiz() {
     btnC.innerHTML = currentQuestion.C;
     btnD.innerHTML = currentQuestion.D;
 };
+
+// a function to start the quiz
+function startQuiz() {
+    gameOver.style.display="none";
+    startQuizDiv.style.display="none";
+    generateQuiz();
+
+    // set the timer 
+    timerInterval = setInterval(function() {
+        timeLeft--;
+        quizTimerEl.textContent = "Time Remaining: " + timeLeft;
+
+        // check if the timer is 0
+        // if 0 show score
+        if(timeLeft === 0) {
+            clearInterval(timerInterval);
+            userScore();
+        }
+    }, 1000);
+    quizEl.style.display="block";
+}
+
+// a function to check correct answers
+function checkAnswer(answer) {
+    correctAns = quizQuestions[currentQuestionIndex].correctAnswer;
+
+    // if the argument inside the function is the correct answer for that question & current question is not the final question 
+    // add +1 to the score
+    if(answer === correctAns && currentQuestionIndex !== finalQuestionIndex) {
+        // add +1 to the score
+        score++;
+
+        // alert the user they're correct
+        alert("Correct!");
+
+        // jump to the next question
+        currentQuestionIndex++;
+
+        // generate the quiz again but current index updating 
+        generateQuiz();
+    }
+
+    // else if the answer is not correct and current question is not the final question 
+    // jump to the next question 
+    // alert the user they're wrong
+    else if(answer !== correctAns && currentQuestionIndex !== finalQuestionIndex) {
+        // alert the user they're wrong
+        alert("Wrong!");
+
+        // jump to the next question
+        currentQuestionIndex++;
+
+        // generate the quiz again but current index updating
+        generateQuiz();
+    }
+    // if the current question is the last question ask the question and then show the final score 
+    else {
+        userScore();
+    }
+    }
+
